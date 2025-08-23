@@ -66,7 +66,7 @@ export default function Portfolio() {
             {/* Static left */}
             <div className="relative flex-shrink-0">
               <img
-                src="/01_hero-img.webp"
+                src={process.env.PUBLIC_URL + "/images/01_hero-img.webp"}
                 alt="Logo"
                 className="z-0 logo-heart absolute -top-5 -left-16 hidden lg:block"
               />
@@ -79,7 +79,7 @@ export default function Portfolio() {
                 <Marquee />
               </div>
               <img
-                src="/02_hero-img.webp"
+                src={process.env.PUBLIC_URL + "/images/02_hero-img.webp"}
                 alt="Logo"
                 className="logo-helmet bounce absolute -right-16 -top-20 z-50 hidden lg:block"
               />
