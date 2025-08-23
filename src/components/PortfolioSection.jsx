@@ -6,6 +6,8 @@ import Marquee from "./Marquee";
 import OverlayMenu from "./OverlayMenu";
 import FadeLetters from "./FadeLetters";
 import MarqueeScrollEvent from "./MarqueeScrollEvent";
+import Coin from "./Coin";
+import PurchaseButton from "./PurchaseButton";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -43,45 +45,66 @@ export default function Portfolio() {
     >
       {/* Theme Toggle */}
       {/* Theme Toggle + Overlay */}
-      <div className="flex flex-col items-end gap-2">
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="fixed top-4 lg:right-52 z-50 w-16 h-16 right-32 hover:scale-105 transition"
-        >
-          {darkMode ? <Sun size={30} /> : <MoonStar size={30} />}
-        </button>
 
-        <OverlayMenu darkMode={darkMode}>
-          <h2 className="text-xl sm:text-2xl font-bold">My Overlay</h2>
-          <p className="text-gray-600 mt-2 text-sm sm:text-base">
-            This expands from a small button.
-          </p>
-        </OverlayMenu>
+      <div className="relative w-full flex items-start justify-between px-4 sm:px-8 lg:px-16 pt-6">
+        {/* Coin (left side) */}
+        <div className="flex-shrink-0">
+          <Coin />
+        </div>
+
+        {/* Right-side buttons */}
+        <div className="flex flex-col items-end gap-4">
+          {/* Dark mode toggle */}
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="absolute top-4  right-44 lg:right-96 z-50 w-16 h-16 right-32 hover:scale-105 transition"
+          >
+            {darkMode ? <Sun size={24} /> : <MoonStar size={24} />}
+          </button>
+
+          {/* Purchase button */}
+          <PurchaseButton darkMode={darkMode} />
+
+          {/* Overlay menu */}
+          <OverlayMenu darkMode={darkMode}>
+            <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">
+              My Overlay
+            </h2>
+            <p className="text-gray-600 mt-2 text-xs sm:text-sm lg:text-base">
+              This expands from a small button.
+            </p>
+          </OverlayMenu>
+        </div>
       </div>
 
       {/* Hero Section */}
-      <section className="font-sans font-semibold text-6xl lg:text-8xl h-screen flex items-center justify-center px-4">
-        <div className="wider-text text-center">
+      <section className="font-sans font-semibold text-6xl md:text-4xl lg:text-8xl h-screen flex items-center justify-center px-4">
+        <div className="container mx-auto text-center">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             {/* Static left */}
             <div className="relative flex-shrink-0">
               <img
-                src={process.env.PUBLIC_URL + "/images/01_hero-img.webp"}
+                src={process.env.PUBLIC_URL + "/logo512.png"}
                 alt="Logo"
-                className="z-0 logo-heart absolute -top-5 -left-16 hidden lg:block"
+                className="z-0 logo-heart absolute -top-5 md:object-contain md:-top-20 -left-16 hidden md:block lg:block"
               />
-              <span className="relative z-10">Make&nbsp;</span>
+              <span className="relative z-10 pl-6 lg:pl-0">Make</span>
             </div>
 
             {/* Scrolling wrapper */}
-            <div className="flex-shrink overflow-hidden w-full w-[20rem] md:w-[30rem] lg:w-[35rem] border text-[#161616] round-custom">
-              <div className="flex whitespace-nowrap">
-                <Marquee />
+            <div className="relative flex-shrink w-full max-w-[60%] lg:max-w-2xl text-[#161616]">
+              {/* scrolling wrapper */}
+              <div className="overflow-hidden border round-custom">
+                <div className="flex whitespace-nowrap">
+                  <Marquee />
+                </div>
               </div>
+
+              {/* floating image */}
               <img
-                src={process.env.PUBLIC_URL + "/images/02_hero-img.webp"}
+                src={process.env.PUBLIC_URL + "/logo192.png"}
                 alt="Logo"
-                className="logo-helmet bounce absolute -right-16 -top-20 z-50 hidden lg:block"
+                className="logo-helmet bounce absolute -right-16 -top-20 z-50 hidden md:block lg:block"
               />
             </div>
           </div>

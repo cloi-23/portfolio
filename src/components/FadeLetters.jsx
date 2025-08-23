@@ -32,13 +32,11 @@ export default function FadeLetters({ darkMode }) {
     <section
       ref={sectionRef}
       className="
-        wider-text fade-section
+        lg:wider-text fade-section
         max-w-4xl mx-auto 
         text-center pb-20
         leading-relaxed
         text-sm 
-        sm:text-base 
-        md:text-2xl 
         lg:text-3xl"
     >
       {lines.map((line, lineIndex) => (

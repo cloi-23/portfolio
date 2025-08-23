@@ -34,7 +34,7 @@ export default function ResponsiveExpandingBox({ darkMode, children }) {
       <AnimatePresence>
         <motion.div
           key="box"
-          initial={{ scale: 0.2, opacity: 0.8 }}
+          initial={false}
           animate={
             open ? { scale: 1, opacity: 1 } : { scale: 0.07, opacity: 0 }
           } // 👈 shrinks back, but never disappears
