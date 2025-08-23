@@ -13,7 +13,7 @@ export default function Coin() {
   }, []);
 
   return (
-    <div className="flex">
+    <div className="flex lg:pl-32">
       <div
         className="relative w-16 h-16 overflow-hidden"
         style={{ perspective: 600 }}
