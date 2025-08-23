@@ -104,7 +104,7 @@ export default function Portfolio() {
               <img
                 src={process.env.PUBLIC_URL + "/logo192.png"}
                 alt="Logo"
-                className="logo-helmet bounce absolute -right-16 -top-20 z-50 hidden md:block lg:block"
+                className="logo-helmet bounce absolute -right-16 -top-20 hidden md:block lg:block"
               />
             </div>
           </div>
