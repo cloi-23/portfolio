@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 
-export default function FancyText({ text, isHovered }) {
+export default function FancyText({ text, size = 20, isHovered }) {
   const letters = text.split("");
 
   return (
-    <span className="hidden lg:inline-block mx-1 text-[20px] font-semibold cursor-pointer">
+    <span
+      className={`${size === 20 ? "hidden" : ""} lg:inline-block mx-1 text-[${size}px] font-semibold cursor-pointer`}
+    >
       {letters.map((char, i) => (
         <motion.span
           key={i}

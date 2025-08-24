@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Jimplify",
+    "description": "A modern tool designed to streamline and simplify complex workflows.",
+    "url": "https://jimplify.one/",
+    "previews": [
+      "/project-images/jimplify-1.png",
+      "/project-images/jimplify-2.png"
+    ]
+  },
+  {
+    "title": "North Sea Parts v6",
+    "description": "An updated platform for browsing and managing automotive parts efficiently.",
+    "url": "https://v6.northseaparts.com/",
+    "previews": [
+      "/project-images/northseaparts-1.png",
+      "/project-images/northseaparts-2.png",
+      "/project-images/northseaparts-3.png",
+      "/project-images/northseaparts-4.png"
+    ]
+  },
+  {
+    "title": "Biofins Pet Shop",
+    "description": "An e-commerce store tailored for pet lovers, offering a wide range of pet products.",
+    "url": "https://biofinspetshop.com/",
+    "previews": ["/project-images/biofins-1.png"]
+  }
+]

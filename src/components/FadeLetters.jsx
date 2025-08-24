@@ -5,7 +5,7 @@ export default function FadeLetters({ darkMode }) {
   const [progress, setProgress] = useState(0);
 
   const lines = [
-    "Elevate your digital presence with Rayo - dynamic and",
+    "Elevate your digital presence with Cloi - dynamic and",
     "stylish template designed for creative agencies and",
     "personal brands.",
   ];
@@ -36,7 +36,8 @@ export default function FadeLetters({ darkMode }) {
         max-w-4xl mx-auto 
         text-center pb-20
         leading-relaxed
-        text-sm 
+        text-sm
+        md:text-3xl
         lg:text-3xl"
     >
       {lines.map((line, lineIndex) => (

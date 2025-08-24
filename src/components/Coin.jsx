@@ -33,7 +33,7 @@ export default function Coin() {
           />
         </div>
       </div>
-      <span className="flex items-center pl-2 font-semibold text-3xl font-mono">
+      <span className="items-center pl-2 font-semibold text-3xl font-mono hidden md:flex lg:flex">
         Cloi
       </span>
     </div>
