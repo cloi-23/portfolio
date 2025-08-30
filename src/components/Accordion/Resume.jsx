@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { Download, ExternalLink } from "lucide-react";
 import FancyText from "../FancyText";
 
 export default function AccordionResume({ darkMode }) {
   const [open, setOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
-
+  const resumeLink = "https://cloi23.github.io/resume";
   return (
     <div className="w-full flex flex-col items-center">
       {/* Accordion header */}
@@ -60,26 +60,35 @@ export default function AccordionResume({ darkMode }) {
             ${darkMode ? "bg-[#121212] text-white" : "bg-white text-black"}`}
           >
             <div className="p-4 flex flex-col gap-4">
-              {/* Resume preview */}
-              <div className="w-full h-[60vh] border rounded-lg overflow-hidden">
-                <iframe
-                  src="https://cloi23.github.io/resume"
-                  className="w-full h-full"
-                  title="Resume Preview"
-                />
-              </div>
-
-              {/* Open in new tab */}
-              <button
-                onClick={() =>
-                  window.open("https://cloi23.github.io/resume", "_blank")
-                }
-                className={`flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition
-                ${darkMode ? "bg-blue-500 text-white hover:bg-blue-600" : "bg-blue-600 text-white hover:bg-blue-700"}`}
-              >
-                <ExternalLink className="w-4 h-4" />
-                Open Resume in New Tab
-              </button>
+              {/* Resume Links */}
+              <ul className="flex flex-col gap-2 list-disc list-inside text-lg">
+                <ul>
+                  <a
+                    href={resumeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline flex items-center gap-1"
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    View Resume Online
+                  </a>
+                </ul>
+                <ul>
+                  <a
+                    href={`${process.env.PUBLIC_URL}/resume.pdf`}
+                    download
+                    className="text-green-500 hover:underline flex items-center gap-1"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download Resume
+                  </a>
+                </ul>
+                <ul>
+                  <span>
+                    Skills, Experience, Education, and Projects summarized here.
+                  </span>
+                </ul>
+              </ul>
             </div>
           </motion.div>
         )}

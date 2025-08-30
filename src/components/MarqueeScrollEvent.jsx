@@ -3,11 +3,9 @@ import { useEffect, useRef } from "react";
 
 const items = [
   { text: "Designer" },
-  { text: "Developer" },
+  { text: "Web Application Developer" },
   { text: "Freelancer" },
-  { text: "Digital agency" },
   { text: "Personal portfolio" },
-  { text: "Web agency" },
   { text: "Creative developer" },
   { text: "Portfolio" },
 ];
