@@ -10,6 +10,7 @@ import Coin from "./Coin";
 import PurchaseButton from "./PurchaseButton";
 import AccordionResume from "./Accordion/Resume";
 import ProjectsSection from "./Projects/Section";
+import AccordionFaceRecognition from "./Accordion/Face/Recognition";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -45,18 +46,12 @@ export default function Portfolio() {
           : "bg-[#FAF7F6] text-[#161616] min-h-screen"
       }
     >
-      {/* Theme Toggle */}
-      {/* Theme Toggle + Overlay */}
-
       <div className="absolute   w-full flex items-start justify-between px-4 sm:px-8 lg:px-16 pt-14">
-        {/* Coin (left side) */}
         <div className="flex-shrink-0">
           <Coin />
         </div>
 
-        {/* Right-side buttons */}
         <div className="flex flex-col items-end gap-4">
-          {/* Dark mode toggle */}
           <button
             onClick={() => setDarkMode(!darkMode)}
             className="absolute top-14  right-44 lg:right-[26em] z-50 w-16 h-16 right-32 hover:scale-105 transition"
@@ -64,12 +59,12 @@ export default function Portfolio() {
             {darkMode ? <Sun size={40} /> : <MoonStar size={40} />}
           </button>
 
-          {/* Purchase button */}
           <PurchaseButton darkMode={darkMode} />
 
           {/* Overlay menu */}
           <OverlayMenu darkMode={darkMode}>
             <AccordionResume darkMode={darkMode} />
+            <AccordionFaceRecognition darkMode={darkMode} />
           </OverlayMenu>
         </div>
       </div>
