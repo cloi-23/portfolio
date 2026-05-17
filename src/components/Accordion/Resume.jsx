@@ -6,7 +6,7 @@ import FancyText from "../FancyText";
 export default function AccordionResume({ darkMode }) {
   const [open, setOpen] = useState(false);
   const [hovered, setHovered] = useState(false);
-  const resumeLink = "https://cloi23.github.io/resume";
+  const resumeLink = "https://cloi-23.github.io/resume";
   return (
     <div className="w-full flex flex-col items-center">
       {/* Accordion header */}
