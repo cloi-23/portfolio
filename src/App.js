@@ -1,12 +1,11 @@
-import "./App.css";
-import PortfolioSection from "./components/PortfolioSection";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <div>
-      <PortfolioSection />
-      <footer className="h-40 flex items-center justify-center bg-gray-900 text-white">
-        © 2025 My Portfolio
+    <div className="bg-[#0f0f0d]">
+      <HomePage />
+      <footer className="flex h-24 items-center justify-center bg-[#0f0f0d] px-5 text-sm text-[#f6f3ec]/45">
+        © 2026 Cloi. Built to show the work.
       </footer>
     </div>
   );
