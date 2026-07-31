@@ -1,5 +1,6 @@
 import { ArrowUpRight, Mail } from "lucide-react";
 import ProjectsSection from "../components/Projects/Section";
+import SkillsEvidenceSection from "../components/SkillsEvidenceSection";
 
 export default function HomePage() {
   return (
@@ -30,6 +31,12 @@ export default function HomePage() {
           >
             <a
               className="text-[#f6f3ec]/70 transition hover:text-[#ddf160]"
+              href="#skills"
+            >
+              Skills
+            </a>
+            <a
+              className="text-[#f6f3ec]/70 transition hover:text-[#ddf160]"
               href="#projects"
             >
               Projects
@@ -58,10 +65,10 @@ export default function HomePage() {
 
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="#projects"
+                href="#skills"
                 className="inline-flex items-center gap-2 rounded-full bg-[#ddf160] px-5 py-3 text-sm font-bold text-[#11110f] transition hover:-translate-y-0.5"
               >
-                View projects
+                See skills
                 <ArrowUpRight size={18} aria-hidden="true" />
               </a>
               <a
@@ -76,6 +83,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <SkillsEvidenceSection />
       <ProjectsSection />
 
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
