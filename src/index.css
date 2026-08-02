@@ -51,3 +51,183 @@ code {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.broken-glass-field {
+  opacity: 0.82;
+}
+
+.glass-shard {
+  clip-path: polygon(8% 14%, 84% 0, 100% 48%, 68% 100%, 0 82%);
+  filter: drop-shadow(0 0 14px rgba(158, 226, 255, 0.2));
+  animation: glass-drift 8s ease-in-out infinite;
+}
+
+.glass-shard--wide {
+  clip-path: polygon(0 36%, 74% 0, 100% 30%, 82% 100%, 14% 78%);
+}
+
+.glass-shard--chip {
+  clip-path: polygon(22% 0, 100% 22%, 74% 100%, 0 62%);
+}
+
+.glass-shard--blade {
+  clip-path: polygon(42% 0, 100% 14%, 64% 100%, 0 84%, 18% 28%);
+}
+
+.glass-shard--kite {
+  clip-path: polygon(14% 18%, 78% 0, 100% 74%, 34% 100%, 0 52%);
+}
+
+.glass-shard--splinter {
+  clip-path: polygon(0 30%, 100% 0, 76% 36%, 94% 100%, 18% 74%);
+}
+
+.glass-shard::before,
+.glass-shard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      115deg,
+      transparent 0 30%,
+      rgba(255, 255, 255, 0.72) 42%,
+      transparent 50%
+    ),
+    linear-gradient(18deg, rgba(158, 226, 255, 0.42), transparent 34%),
+    linear-gradient(
+      145deg,
+      rgba(221, 241, 96, 0.2),
+      rgba(246, 243, 236, 0.06) 44%,
+      rgba(0, 0, 0, 0.12) 82%
+    );
+  opacity: 0.62;
+}
+
+.glass-shard::after {
+  inset: 0;
+  height: auto;
+  width: auto;
+  border-radius: 0;
+  background:
+    linear-gradient(
+      88deg,
+      transparent 0 36%,
+      rgba(255, 255, 255, 0.82) 38%,
+      transparent 42%
+    ),
+    linear-gradient(
+      151deg,
+      transparent 0 58%,
+      rgba(158, 226, 255, 0.55) 60%,
+      transparent 64%
+    );
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    inset 10px -10px 22px rgba(158, 226, 255, 0.1),
+    inset -8px 8px 18px rgba(221, 241, 96, 0.08);
+  opacity: 0.42;
+  animation: glass-spark 2.8s ease-in-out infinite;
+}
+
+.broken-glass-field::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(246, 243, 236, 0.76) 0 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(221, 241, 96, 0.62) 0 1px, transparent 1.9px),
+    linear-gradient(
+      118deg,
+      transparent 0 47%,
+      rgba(255, 255, 255, 0.22) 48%,
+      transparent 49%
+    );
+  background-position:
+    0 0,
+    34px 28px,
+    center;
+  background-size:
+    86px 86px,
+    116px 116px,
+    38rem 100%;
+  opacity: 0.22;
+  animation: glitter-field 5.6s linear infinite;
+}
+
+.animation-delay-0 {
+  animation-delay: 0ms;
+}
+
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+
+.animation-delay-1400 {
+  animation-delay: 1400ms;
+}
+
+.animation-delay-2100 {
+  animation-delay: 2100ms;
+}
+
+.animation-delay-2800 {
+  animation-delay: 2800ms;
+}
+
+.animation-delay-3500 {
+  animation-delay: 3500ms;
+}
+
+@keyframes glass-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.46;
+  }
+  42% {
+    transform: translate3d(10px, -14px, 0) scale(1.03);
+    opacity: 0.88;
+  }
+  70% {
+    transform: translate3d(-8px, 7px, 0) scale(0.98);
+    opacity: 0.58;
+  }
+}
+
+@keyframes glass-spark {
+  0%,
+  68%,
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  74%,
+  82% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glitter-field {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.16;
+  }
+  50% {
+    opacity: 0.38;
+  }
+  100% {
+    transform: translate3d(24px, 18px, 0);
+    opacity: 0.16;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glass-shard,
+  .glass-shard::after,
+  .broken-glass-field::before {
+    animation: none;
+  }
+}

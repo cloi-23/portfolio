@@ -2,26 +2,48 @@
   {
     "title": "Full-stack product systems",
     "summary": "Built across NestJS APIs and Nuxt frontends with resource modules, sheet-style CRUD, auth, search, file uploads, DTO validation, and Mongo/Mongoose data models.",
-    "tools": ["NestJS", "Nuxt", "Vue", "MongoDB", "Mongoose", "FormKit", "Pinia"],
+    "tools": [
+      "NestJS",
+      "Nuxt",
+      "Vue",
+      "MongoDB",
+      "Mongoose",
+      "FormKit",
+      "Pinia"
+    ],
     "usedIn": ["Biofins", "Jimplify", "North Sea Parts v7", "REC"]
   },
   {
     "title": "Enterprise UI workflows",
     "summary": "Shipped admin-facing screens for sheets, create/edit flows, autocomplete options, attachments, history/restore behavior, and data-heavy catalog management.",
-    "tools": ["Nuxt", "FormKit Pro", "Tailwind CSS", "Vue Router", "Nuxt Content"],
+    "tools": [
+      "Nuxt",
+      "FormKit Pro",
+      "Tailwind CSS",
+      "Vue Router",
+      "Nuxt Content"
+    ],
     "usedIn": ["North Sea Parts v7", "Jimplify", "Biofins", "REC"]
   },
   {
     "title": "Backend architecture",
     "summary": "Designed reusable resource services, controllers, summarizers, searchers, transactional writes, version history, mail, generated files, image handling, and seed imitators.",
-    "tools": ["TypeScript", "NestJS", "JWT", "Passport", "Sharp", "Jest", "Mailgun"],
+    "tools": [
+      "TypeScript",
+      "NestJS",
+      "JWT",
+      "Passport",
+      "Sharp",
+      "Jest",
+      "Mailgun"
+    ],
     "usedIn": ["North Sea Parts v7", "Biofins", "Jimplify", "REC"]
   },
   {
     "title": "Mobile and native-ready features",
     "summary": "Worked on a Nuxt/Ionic/Capacitor mobile app with camera, push notifications, haptics, QR scanning, persistent auth state, and native/browser behavior checks.",
     "tools": ["Ionic", "Capacitor", "Firebase", "Pinia", "VueUse", "jsQR"],
-    "usedIn": ["North Sea Parts mobile app"]
+    "usedIn": ["North Sea Parts mobile app", "Jimplify"]
   },
   {
     "title": "CI/CD and deployment",

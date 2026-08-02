@@ -6,6 +6,7 @@ import {
   Smartphone,
   Sparkles,
 } from "lucide-react";
+import BrokenGlassField from "./BrokenGlassField";
 import skillProof from "../data/skillProof.json";
 
 const icons = [Layers3, Sparkles, ServerCog, Smartphone, CloudCog];
@@ -35,8 +36,14 @@ export default function SkillsEvidenceSection() {
       id="skills"
       className="relative overflow-hidden px-5 py-16 sm:px-8 lg:py-24"
     >
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_8%,rgba(221,241,96,0.16),transparent_22%),radial-gradient(circle_at_78%_16%,rgba(246,243,236,0.12),transparent_22%),radial-gradient(circle_at_10%_72%,rgba(221,241,96,0.08),transparent_24%),linear-gradient(180deg,rgba(221,241,96,0.06),transparent_38%,rgba(246,243,236,0.035)_72%,transparent_100%)]" />
+        <div className="absolute left-1/2 top-10 h-64 w-[44rem] -translate-x-1/2 rounded-full bg-[#ddf160]/10 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-72 w-[34rem] rounded-full bg-white/[0.035] blur-3xl" />
+        <BrokenGlassField />
+      </div>
       <div className="absolute inset-x-0 top-24 h-px bg-gradient-to-r from-transparent via-[#ddf160]/45 to-transparent" />
-      <div className="mx-auto max-w-7xl">
+      <div className="relative mx-auto max-w-7xl">
         <div className="mb-10 grid gap-7 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ddf160]/90">

@@ -1,8 +1,34 @@
-import { ArrowUpRight, Mail } from "lucide-react";
-import ProjectsSection from "../components/Projects/Section";
+import { useEffect, useState } from "react";
+import { ArrowUp, ArrowUpRight, Download, Mail } from "lucide-react";
+import ProjectShowcaseSection from "../components/ProjectShowcaseSection";
 import SkillsEvidenceSection from "../components/SkillsEvidenceSection";
 
 export default function HomePage() {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const resumeUrl = `${process.env.PUBLIC_URL}/resume.pdf`;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 560);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    });
+  };
+
   return (
     <main className="min-h-screen bg-[#0e100c] text-[#f6f3ec]">
       <section
@@ -42,6 +68,13 @@ export default function HomePage() {
               Projects
             </a>
             <a
+              className="hidden text-[#f6f3ec]/70 transition hover:text-[#ddf160] sm:inline"
+              href={resumeUrl}
+              download="Cloi-Resume.pdf"
+            >
+              Resume
+            </a>
+            <a
               className="rounded-full border border-[#f6f3ec]/20 bg-[#0e100c]/35 px-4 py-2 backdrop-blur transition hover:border-[#ddf160] hover:text-[#ddf160]"
               href="mailto:cruzmejari@gmail.com"
             >
@@ -56,11 +89,11 @@ export default function HomePage() {
               Web apps, systems, and product interfaces
             </p>
             <h1 className="max-w-5xl text-5xl font-black leading-[0.92] tracking-normal text-white sm:text-7xl lg:text-8xl">
-              Project work that looks clean and ships for real.
+              Full-stack software engineer building clean web applications.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-[#f6f3ec]/78 sm:text-xl">
-              A focused showcase of live builds, client platforms, and interface
-              work. No filler, just screenshots and links.
+              I work with Vue, Node.js, and databases to create practical
+              products that are easy to use and ready for real users.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -78,13 +111,21 @@ export default function HomePage() {
                 <Mail size={18} aria-hidden="true" />
                 Work together
               </a>
+              <a
+                href={resumeUrl}
+                download="Cloi-Resume.pdf"
+                className="inline-flex items-center gap-2 rounded-full border border-[#f6f3ec]/20 px-5 py-3 text-sm font-bold text-[#f6f3ec] transition hover:border-[#ddf160] hover:text-[#ddf160]"
+              >
+                <Download size={18} aria-hidden="true" />
+                Download resume
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       <SkillsEvidenceSection />
-      <ProjectsSection />
+      <ProjectShowcaseSection />
 
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
         <div className="border-t border-[#f6f3ec]/12 pt-10">
@@ -100,6 +141,19 @@ export default function HomePage() {
           </a>
         </div>
       </section>
+
+      <button
+        type="button"
+        aria-label="Scroll back to top"
+        onClick={scrollToTop}
+        className={`fixed bottom-5 right-5 z-50 inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#f6f3ec]/15 bg-[#0e100c]/85 text-[#f6f3ec] shadow-[0_18px_45px_rgba(0,0,0,0.32)] backdrop-blur transition duration-300 hover:border-[#ddf160] hover:text-[#ddf160] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ddf160] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0e100c] ${
+          showBackToTop
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-3 opacity-0"
+        }`}
+      >
+        <ArrowUp size={20} aria-hidden="true" />
+      </button>
     </main>
   );
 }

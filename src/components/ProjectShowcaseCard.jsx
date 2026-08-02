@@ -1,6 +1,6 @@
 import { ArrowUpRight, Link as LinkIcon } from "lucide-react";
 
-export default function ProjectCard({ project, index }) {
+export default function ProjectShowcaseCard({ project, index }) {
   const displayUrl = project.url.replace(/^https?:\/\//, "");
   const isEven = index % 2 === 0;
 
