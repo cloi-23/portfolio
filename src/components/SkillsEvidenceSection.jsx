@@ -98,7 +98,7 @@ export default function SkillsEvidenceSection() {
                     {skill.tools.map((tool) => (
                       <span
                         key={tool}
-                        className="rounded-full border border-[#f6f3ec]/12 bg-[#0e100c]/60 px-3 py-1 text-sm text-[#f6f3ec]/70"
+                        className="rounded-[4px] border border-[#2f3226] bg-[#0e100c]/70 px-2.5 py-1 text-sm text-[#f6f3ec]/66 sm:rounded-full sm:border-[#f6f3ec]/12 sm:px-3"
                       >
                         {tool}
                       </span>
@@ -112,7 +112,7 @@ export default function SkillsEvidenceSection() {
                     <ul className="flex flex-wrap gap-2">
                       {skill.usedIn.map((project) => (
                         <li key={project}>
-                          <span className="inline-flex rounded-full bg-[#f6f3ec] px-3 py-1 text-sm font-bold text-[#11110f]">
+                          <span className="inline-flex rounded-[4px] border border-[#ddf160]/22 bg-[#ddf160]/12 px-2.5 py-1 text-sm font-bold text-[#ddf160] sm:rounded-full sm:border-0 sm:bg-[#f6f3ec] sm:px-3 sm:text-[#11110f]">
                             {project}
                           </span>
                         </li>

@@ -7,16 +7,19 @@
   {
     "title": "North Sea Parts v7",
     "description": "An updated platform for browsing and managing automotive parts efficiently.",
-    "url": "https://v7.northseaparts.com/"
+    "url": "https://v7.northseaparts.com/",
+    "image": "/project-images/northseaparts-2.png"
   },
   {
     "title": "Biofins Pet Shop",
     "description": "A pet shop storefront built to showcase products and help customers browse with ease.",
-    "url": "https://biofinspetshop.com/"
+    "url": "https://biofinspetshop.com/",
+    "image": "/project-images/biofins-2.png"
   },
   {
     "title": "Subcontractor Management System",
     "description": "A comprehensive solution for managing subcontractors and their projects.",
-    "url": "https://rec.engineering/"
+    "url": "https://rec.engineering/",
+    "image": "/project-images/rec-1.png"
   }
 ]

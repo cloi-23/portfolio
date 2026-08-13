@@ -52,6 +52,11 @@ code {
   scrollbar-width: none; /* Firefox */
 }
 
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 640px;
+}
+
 .broken-glass-field {
   opacity: 0.82;
 }
@@ -229,5 +234,27 @@ code {
   .glass-shard::after,
   .broken-glass-field::before {
     animation: none;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .broken-glass-field {
+    opacity: 0.3;
+  }
+
+  .broken-glass-field::before {
+    animation: none;
+    background-image:
+      radial-gradient(circle, rgba(246, 243, 236, 0.42) 0 1px, transparent 1.7px),
+      radial-gradient(circle, rgba(221, 241, 96, 0.34) 0 1px, transparent 1.9px);
+    opacity: 0.16;
+  }
+
+  .glass-shard {
+    display: none;
   }
 }

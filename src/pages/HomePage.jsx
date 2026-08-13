@@ -1,21 +1,42 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowUp, ArrowUpRight, Download, Mail } from "lucide-react";
 import ProjectShowcaseSection from "../components/ProjectShowcaseSection";
 import SkillsEvidenceSection from "../components/SkillsEvidenceSection";
 
 export default function HomePage() {
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const showBackToTopRef = useRef(false);
   const resumeUrl = `${process.env.PUBLIC_URL}/resume.pdf`;
 
   useEffect(() => {
+    let frameId = null;
+
     const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 560);
+      if (frameId !== null) {
+        return;
+      }
+
+      frameId = window.requestAnimationFrame(() => {
+        const shouldShow = window.scrollY > 560;
+
+        if (showBackToTopRef.current !== shouldShow) {
+          showBackToTopRef.current = shouldShow;
+          setShowBackToTop(shouldShow);
+        }
+
+        frameId = null;
+      });
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId);
+      }
+    };
   }, []);
 
   const scrollToTop = () => {
