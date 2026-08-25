@@ -6,15 +6,18 @@ const projectGlassPieces = [
   {
     className: "left-[3%] top-20 h-24 w-16 rotate-[18deg] animation-delay-700",
     shape: "glass-shard--blade",
+    image: "/project-images/northseaparts-2.png",
   },
   {
     className:
       "left-[30%] top-10 h-12 w-32 rotate-[-13deg] animation-delay-2100",
     shape: "glass-shard--splinter",
+    image: "/project-images/biofins-2.png",
   },
   {
     className: "right-[8%] top-36 h-24 w-28 rotate-[22deg] animation-delay-0",
     shape: "glass-shard--kite",
+    image: "/project-images/rec-1.png",
   },
   {
     className:

@@ -67,6 +67,44 @@ code {
   animation: glass-drift 8s ease-in-out infinite;
 }
 
+.glass-logo {
+  display: block;
+  height: auto;
+  max-width: 90%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 78%;
+  z-index: 2;
+}
+
+.glass-logo-caption {
+  bottom: 16%;
+  color: rgba(246, 243, 236, 0.9);
+  font-size: 0.45rem;
+  font-weight: 800;
+  left: 50%;
+  letter-spacing: 0.12em;
+  position: absolute;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.glass-screenshot {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  object-position: top center;
+  opacity: 0.34;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 .glass-shard--wide {
   clip-path: polygon(0 36%, 74% 0, 100% 30%, 82% 100%, 14% 78%);
 }
@@ -249,7 +287,11 @@ code {
   .broken-glass-field::before {
     animation: none;
     background-image:
-      radial-gradient(circle, rgba(246, 243, 236, 0.42) 0 1px, transparent 1.7px),
+      radial-gradient(
+        circle,
+        rgba(246, 243, 236, 0.42) 0 1px,
+        transparent 1.7px
+      ),
       radial-gradient(circle, rgba(221, 241, 96, 0.34) 0 1px, transparent 1.9px);
     opacity: 0.16;
   }
